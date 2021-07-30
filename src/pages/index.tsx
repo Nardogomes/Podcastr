@@ -10,15 +10,14 @@ import { convertDurationToTimeString } from '../utils/convertDurationToTimeStrin
 import styles from './home.module.scss';
 
 type Episode = {
-  id: string,
-  title: string,
-  thumbnail: string,
-  members: string,
-  plublishedAt: string,
-  duration: number,
-  durationAsString: string,
-  description: string,
-  url: string
+  id: string;
+  title: string;
+  thumbnail: string;
+  members: string;
+  plublishedAt: string;
+  duration: number;
+  durationAsString: string;
+  url: string;
 }
 
 type HomeProps = {
@@ -132,7 +131,6 @@ export const getStaticProps: GetStaticProps = async () => {
       plublishedAt: format(parseISO(episode.published_at), 'd MMM yy', { locale: ptBR}),
       duration: Number(episode.file.duration),
       durationAsString: convertDurationToTimeString(Number(episode.file.duration)),
-      description: episode.description,
       url: episode.file.url
     }
   });
